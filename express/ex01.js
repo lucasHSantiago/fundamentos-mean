@@ -10,7 +10,8 @@ server.all('/teste', function(req, res) {
 })
 
 server.get(/api/, function(req, res) {
-    res.send('<h1>API!</h1>')
+    res.send('<h1>API!</h1>') 
 })
 
+//Servidor
 server.listen(3000, () => console.log('Executando...'))
