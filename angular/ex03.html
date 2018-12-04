@@ -9,16 +9,24 @@
     <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
     <script type="text/javascript">
         angular.module('app', [])
+        angular.module('app').controller('MeuController', [
+            '$scope',
+            function($scope) {
+                $scope.value  = 10
+                $scope.inc = function() {
+                    $scope.value++
+                }             
+            }
+        ])
     </script>
 </head>
 
 <body>
-    {{ 1 + 1 }}
-
-    <form action="">
-
-        
-    </form>
+    <div ng-controller="MeuController">
+        <h1>{{ value }}</h1>
+        <input type="text" ng-model="value">
+        <button ng-click="inc()">inc</button>
+    </div>
 </body>
 
 </html>
